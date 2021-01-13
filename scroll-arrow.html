@@ -57,7 +57,7 @@
         }
 
         #scroll-down-arrow {
-            position:   absolute;
+            position: absolute;
             bottom: 24px;
             width: 46px;
             height: 46px;
@@ -66,6 +66,8 @@
             right: 0;
             border: 2px solid #ffffff;
             border-radius: 100%;
+            animation: bounce 2s infinite running;
+
         }
 
         #scroll-down-arrow::before {
@@ -80,9 +82,31 @@
             border-left: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
             transform: rotate(-45deg);
+
         }
 
-       
+        #scroll-down-arrow:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
     </style>
 
 </head>
